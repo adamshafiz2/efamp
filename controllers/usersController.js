@@ -18,7 +18,6 @@ const addUser = async (req, res) => {
 
   const newUser = new User({
     name: req.body.name,
-    userName: req.body.userName,
     email: req.body.email,
     password: hashedPassword,
   });
