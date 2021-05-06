@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const connectDb = require("./config/connectDB");
 const itemsRoute = require("./routes/itemsRoute");
 const usersRoute = require("./routes/usersRoute");
+const cors = require("cors");
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ connectDb();
 // middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 // routes
 app.use("/efamp/api/v1/items", itemsRoute);
