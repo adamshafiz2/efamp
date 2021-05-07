@@ -14,9 +14,9 @@ const app = express();
 connectDb();
 
 // middlewares
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
 
 // routes
 app.use("/efamp/api/v1/items", itemsRoute);
